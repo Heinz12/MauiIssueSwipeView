@@ -20,5 +20,16 @@
 
             SemanticScreenReader.Announce(CounterBtn.Text);
         }
+
+        /// <summary>
+        /// Called when [open swipe view clicked].
+        /// 🐛 SwipeView does not work correctly on iOS when opened programmatically!!!
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        private void OnOpenSwipeViewClicked(object sender, EventArgs e)
+        {
+            swipeView.Open(OpenSwipeItem.RightItems, true);
+        }
     }
 }

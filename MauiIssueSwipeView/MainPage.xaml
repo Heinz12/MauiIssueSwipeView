@@ -36,6 +36,42 @@
                 SemanticProperties.Hint="Counts the number of times you click"
                 Text="Click me" />
 
+            <Label
+                Grid.Column="1"
+                FontSize="22"
+                Text="Opening the SwipeView below with swipe gesture opens the SwipeView correctly."
+                TextColor="Green"
+                VerticalOptions="Center" />
+
+            <SwipeView
+                x:Name="swipeView"
+                BackgroundColor="LightSteelBlue"
+                HeightRequest="90">
+                <SwipeView.RightItems>
+                    <SwipeItemView>
+                        <Button
+                            Clicked="OnCounterClicked"
+                            MinimumHeightRequest="50"
+                            Text="Click me from Swipe" />
+                    </SwipeItemView>
+
+                </SwipeView.RightItems>
+
+                <Grid ColumnDefinitions="auto,*">
+                    <Button
+                        Clicked="OnOpenSwipeViewClicked"
+                        FontSize="22"
+                        Text="&lt;&lt; SwipeView.Open()" />
+
+                    <Label
+                        Grid.Column="1"
+                        FontSize="22"
+                        Text="SwipeView does not work correctly on iOS when opened programmatically!!!"
+                        TextColor="Red"
+                        VerticalOptions="Center" />
+                </Grid>
+            </SwipeView>
+
         </VerticalStackLayout>
     </ScrollView>
 
